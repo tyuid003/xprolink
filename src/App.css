@@ -1,0 +1,233 @@
+/* client/src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1, h2, h3, h4 {
+  color: #2c3e50;
+}
+
+/* Loading and Error styles */
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+.error {
+  color: #e74c3c;
+}
+
+/* Add Company Section */
+.add-company-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+}
+.add-company-section input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.add-company-section button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+.add-company-section button:hover {
+  background-color: #218838;
+}
+
+/* Company Cards Grid */
+.company-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.company-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.company-card h3 {
+  margin-top: 0;
+  color: #34495e;
+}
+
+.company-card p {
+  margin: 5px 0;
+}
+
+.company-card .action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.company-card button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+.company-card button:not(.save-button):not(.delete-button):not(.cancel-button) {
+  background-color: #007bff;
+  color: white;
+}
+.company-card button:not(.save-button):not(.delete-button):not(.cancel-button):hover {
+  background-color: #0056b3;
+}
+
+.company-card .delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+.company-card .delete-button:hover {
+  background-color: #c82333;
+}
+
+.company-card .save-button {
+  background-color: #28a745;
+  color: white;
+}
+.company-card .save-button:hover {
+  background-color: #218838;
+}
+
+.company-card .cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
+.company-card .cancel-button:hover {
+  background-color: #5a6268;
+}
+
+/* Target Links styles */
+.company-card h4 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.company-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.company-card li {
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping for small screens */
+}
+
+.company-card li.active-link {
+  border-left: 5px solid #28a745;
+}
+
+.company-card li.inactive-link {
+  border-left: 5px solid #6c757d;
+  opacity: 0.7;
+}
+
+.company-card li a {
+  color: #007bff;
+  text-decoration: none;
+  word-break: break-all; /* Break long URLs */
+  margin-left: 5px;
+}
+.company-card li a:hover {
+  text-decoration: underline;
+}
+
+.company-card .target-link-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  flex-wrap: wrap;
+}
+.company-card .target-link-item input[type="text"],
+.company-card .target-link-item input[type="url"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.company-card .target-link-item input[type="checkbox"] {
+  transform: scale(1.3);
+  margin-right: 5px;
+}
+.company-card .target-link-item .hits-count {
+  font-weight: bold;
+  color: #555;
+  min-width: 60px; /* Ensure space for hits */
+}
+.company-card .target-link-item button {
+  background-color: #ffc107;
+  color: #333;
+}
+.company-card .target-link-item button:hover {
+  background-color: #e0a800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .company-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .add-company-section {
+    flex-direction: column;
+  }
+  .company-card .target-link-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .company-card .target-link-item input {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
